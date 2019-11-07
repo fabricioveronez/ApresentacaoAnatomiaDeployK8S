@@ -42,6 +42,7 @@ kind: Deployment
 metadata:
   name: corecrud
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: corecrud

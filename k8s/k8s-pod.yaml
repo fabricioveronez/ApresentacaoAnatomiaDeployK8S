@@ -18,8 +18,8 @@ spec:
 
 ---
 
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: corecrud-mongodb-service
 spec:
