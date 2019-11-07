@@ -27,7 +27,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: corecrud-mongodb
+  name: corecrud-mongodb-service
 spec:
   selector:
     app: corecrud-mongodb
