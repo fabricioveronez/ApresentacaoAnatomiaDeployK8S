@@ -53,7 +53,7 @@ spec:
     spec:      
       containers:
       - name: corecrud-container
-        image: fabricioveronez/corecrud
+        image: fabricioveronez/corecrud:v2
         imagePullPolicy: Always
         ports:
         - containerPort: 80
