@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: meureplicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: meupod
+  template:
+    metadata:
+      labels:
+        name: meupod
+    spec:
+      containers:
+      - name: webapi
+        image: fabricioveronez/metricas-api:v1    
+        ports:
+          - containerPort: 80
