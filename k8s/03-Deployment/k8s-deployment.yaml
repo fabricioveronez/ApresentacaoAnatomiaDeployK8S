@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meudeployment
+spec:
+  selector:
+    matchLabels:
+      app: meudeployment
+  template:
+    metadata:
+      labels:
+        app: meudeployment
+    spec:
+      containers:
+      - name: webapi
+        image: fabricioveronez/metricas-api:v1
+        ports:
+        - containerPort: 80
