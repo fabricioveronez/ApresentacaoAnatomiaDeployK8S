@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: corecrud
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: corecrud
+  template:    
+    metadata:
+      labels:
+        app: corecrud
+    spec:      
+      containers:
+      - name: corecrud-container
+        image: fabricioveronez/corecrud:v2
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /swagger
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 3    
+        readinessProbe:
+          httpGet:
+            path: /swagger
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 3         
+        ports:
+        - containerPort: 80
+        env:
+        - name: MONGO_CONNECTIONSTRING
+          value: "mongodb://mongouser:GPX4WOwpcvOc9Wm70gAG8It7tKA0Cy090ZVO82cEJsExogsMDY@corecrud-mongodb-service:27017/admin"
+        - name: MONGO_DATABASE
+          value: "admin"
