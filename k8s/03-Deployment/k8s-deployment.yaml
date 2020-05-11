@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
       - name: webapi
-        image: fabricioveronez/metricas-api:v1
+        image: fabricioveronez/exemplo-versoes:v1
         ports:
         - containerPort: 80

@@ -6,7 +6,7 @@ metadata:
     name: meupod
 spec:
   containers:
-  - name: webapi
-    image: fabricioveronez/metricas-api:v1    
+  - name: web
+    image: nginx    
     ports:
       - containerPort: 80
