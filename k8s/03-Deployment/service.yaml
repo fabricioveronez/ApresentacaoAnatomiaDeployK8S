@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: deployment-service
+spec:
+  selector:
+    app: meudeployment
+  ports:
+  - protocol: TCP
+    port: 80        
+  type: LoadBalancer

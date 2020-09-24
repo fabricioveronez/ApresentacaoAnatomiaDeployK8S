@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: api-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: veronez.net
+      http:
+        paths:
+        - path: /
+          backend:
+              serviceName: api-service
+              servicePort: 80
+    - host: api.veronez.net
+      http:
+        paths:
+        - path: /
+          backend:
+              serviceName: api-service
+              servicePort: 80  
+    - host: nginx.veronez.net
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: nginx
+            servicePort: 80

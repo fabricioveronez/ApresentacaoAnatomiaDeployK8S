@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
       - name: webapi
-        image: fabricioveronez/exemplo-versoes:v1
+        image: kubedevio/nginx-color:blue
         ports:
         - containerPort: 80

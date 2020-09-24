@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
   - name: web
-    image: nginx    
+    image: kubedevio/nginx-color:blue
     ports:
       - containerPort: 80
